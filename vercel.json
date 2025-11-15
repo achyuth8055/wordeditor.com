@@ -45,8 +45,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "VITE_DEEPSEEK_API_KEY": "@vite_deepseek_api_key"
-  }
+  ]
 }
