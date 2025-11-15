@@ -9,7 +9,7 @@ import { InfoPages } from './components/InfoPages';
 import { Background } from './components/Background';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<ToolTab>(ToolTab.TYPING_TEST);
+  const [activeTab, setActiveTab] = useState<ToolTab>(ToolTab.WORD_COUNTER);
 
   return (
     <div className="min-h-screen font-sans text-gray-800 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-x-hidden flex flex-col">
