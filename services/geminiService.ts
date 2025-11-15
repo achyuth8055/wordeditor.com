@@ -1,17 +1,17 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Assume process.env.API_KEY is available
-const API_KEY = process.env.API_KEY;
+// Use VITE_DEEPSEEK_API_KEY or fallback
+const API_KEY = import.meta.env.VITE_DEEPSEEK_API_KEY || '';
 
 if (!API_KEY) {
   console.warn("API_KEY is not set. AI features will not work.");
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 
 const callGemini = async (prompt: string): Promise<string> => {
-    if (!API_KEY) {
+    if (!API_KEY || !ai) {
         return Promise.reject(new Error("API key is not configured."));
     }
   try {
