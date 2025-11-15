@@ -1,0 +1,27 @@
+# robots.txt for WordEditor.online
+# Allow search engines to crawl all content
+
+User-agent: *
+Allow: /
+Allow: /word-counter
+Allow: /typing-test
+Allow: /summarizer
+Allow: /case-converter
+Allow: /about
+Allow: /how-to-use
+Allow: /faqs
+
+# Disallow private/admin paths (if applicable)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/private/
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 0
+
+# Sitemap
+Sitemap: https://wordeditor.online/sitemap.xml

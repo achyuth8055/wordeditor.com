@@ -1,32 +1,56 @@
 {
-  "name": "aiblog",
+  "name": "wordeditor-online",
+  "description": "Free AI-powered word counter, typing test, and text analysis tools",
   "version": "1.0.0",
-  "description": "",
+  "author": "WordEditor Team",
+  "license": "MIT",
+  "homepage": "https://wordeditor.online",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achyuth8055/wordeditor.com"
+  },
+  "bugs": {
+    "url": "https://github.com/achyuth8055/wordeditor.com/issues"
+  },
   "keywords": [
-    "blogEditor"
+    "word-counter",
+    "text-analyzer",
+    "typing-test",
+    "character-counter",
+    "typing-speed",
+    "text-tools",
+    "writing-tools",
+    "summarizer",
+    "case-converter",
+    "readability",
+    "grammar-checker",
+    "online-editor"
   ],
-  "license": "ISC",
-  "author": "achyuth",
-  "type": "commonjs",
-  "main": "app.js",
+  "private": false,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "dev": "vite",
+    "build": "vite build",
+    "build:analyze": "vite build --analyze",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "serve": "vite preview --host"
   },
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "dotenv": "^17.2.3",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "google-ads-api": "^21.0.1",
-    "google-auth-library": "^10.4.2",
-    "googleapis": "^164.1.0",
-    "languagetool-api": "^1.1.2",
-    "mongodb": "^6.20.0",
-    "multer": "^2.0.2",
-    "nodemon": "^3.1.10",
-    "sharp": "^0.34.4",
-    "uuid": "^13.0.0",
-    "yoastseo": "^3.3.0"
+    "@google/genai": "^1.29.1",
+    "jspdf": "^3.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

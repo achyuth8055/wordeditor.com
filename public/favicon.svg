@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#16a34a"/>
+  
+  <!-- Document shape -->
+  <path d="M8 4C6.9 4 6 4.9 6 6V26C6 27.1 6.9 28 8 28H24C25.1 28 26 27.1 26 26V10L20 4H8Z" fill="white" opacity="0.95"/>
+  
+  <!-- Fold corner -->
+  <path d="M20 4V10H26" fill="#16a34a"/>
+  
+  <!-- Text lines representing content -->
+  <line x1="10" y1="13" x2="22" y2="13" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="17" x2="22" y2="17" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="21" x2="18" y2="21" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Word counter indicator (small counter badge) -->
+  <circle cx="24" cy="8" r="3" fill="#16a34a"/>
+  <text x="24" y="9.5" font-size="5" font-weight="bold" fill="white" text-anchor="middle">W</text>
+</svg>
