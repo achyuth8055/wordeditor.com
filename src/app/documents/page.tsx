@@ -64,22 +64,22 @@ const DocumentsPage = () => {
               <Carousel>
                 <CarouselContent>
                   {templates.map((template) => (
-                  <CarouselItem key={template.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <CarouselItem key={template.id} className="md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                     <div
                       onClick={() => !isCreating && createDocument(template.label, template.initialContent)}
                       className={cn(
-                        'aspect-[3/4] flex flex-col gap-y-2.5 cursor-pointer transition hover:scale-105',
+                        'aspect-[3/4] flex flex-col gap-y-2 cursor-pointer transition hover:scale-105',
                         isCreating && 'opacity-50 cursor-not-allowed'
                       )}
                     >
-                      <div className="bg-white rounded-sm border overflow-hidden flex-1">
+                      <div className="bg-white rounded-sm border overflow-hidden flex-1 h-48">
                         <img
                           src={template.imageUrl}
                           alt={template.label}
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <p className="text-sm font-medium text-center">{template.label}</p>
+                      <p className="text-xs font-medium text-center truncate">{template.label}</p>
                     </div>
                   </CarouselItem>
                   ))}

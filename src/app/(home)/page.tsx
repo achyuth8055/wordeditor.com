@@ -1,9 +1,12 @@
 'use client';
 
 import { Navbar } from './navbar';
-// Templates Gallery requires Convex backend (commented out for now)
-// import TemplatesGallery from './templates-gallery';
 import Link from 'next/link';
+import { templates } from '@/constants/tempaltes';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const tools = [
   {
@@ -202,6 +205,28 @@ const blogPosts = [
 ];
 
 const Home = () => {
+  const router = useRouter();
+  const [isCreating, setIsCreating] = useState(false);
+
+  const createDocument = (title: string, initialContent: string) => {
+    setIsCreating(true);
+    try {
+      const randomId = Math.random().toString(36).substring(2, 15);
+      localStorage.setItem(
+        `doc-${randomId}`,
+        JSON.stringify({
+          title,
+          content: initialContent,
+          updatedAt: new Date().toISOString(),
+        })
+      );
+      router.push(`/documents/${randomId}`);
+    } catch (error) {
+      console.error('Error creating document:', error);
+      setIsCreating(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <div className="fixed top-0 left-0 right-0 z-10 h-16 bg-white shadow-sm border-b">
@@ -399,16 +424,45 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Templates Section - Requires Convex backend, commented out for now */}
-        {/* <div className="bg-gray-50 py-16">
+        {/* Templates Section */}
+        <div className="bg-gray-50 py-16">
           <div className="max-w-screen-xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Document Templates</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Start with professionally designed templates for common document types. Save time and maintain consistency across your documents.
-            </p>
-            <TemplatesGallery />
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Document Templates</h2>
+              <p className="text-lg text-gray-600">
+                Start with professionally designed templates. Create documents instantly with localStorage - no signup required!
+              </p>
+            </div>
+            {templates && templates.length > 0 ? (
+              <Carousel>
+                <CarouselContent>
+                  {templates.map((template) => (
+                    <CarouselItem key={template.id} className="md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                      <div
+                        onClick={() => !isCreating && createDocument(template.label, template.initialContent)}
+                        className={cn(
+                          'aspect-[3/4] flex flex-col gap-y-2 cursor-pointer transition hover:scale-105',
+                          isCreating && 'opacity-50 cursor-not-allowed'
+                        )}
+                      >
+                        <div className="bg-white rounded-sm border overflow-hidden flex-1 h-48">
+                          <img
+                            src={template.imageUrl}
+                            alt={template.label}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <p className="text-xs font-medium text-center truncate">{template.label}</p>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            ) : null}
           </div>
-        </div> */}
+        </div>
 
         {/* Blog Section */}
         <div className="max-w-screen-xl mx-auto px-6 py-16">
