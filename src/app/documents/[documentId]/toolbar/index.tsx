@@ -31,8 +31,11 @@ import { FontSzeButton } from './font-size-button';
 import { LineHeightButton } from './line-height-button';
 
 export const Toolbar = () => {
-  // const editor = useEditorStore(state => state.editor);
   const { editor } = useEditorStore();
+
+  if (!editor) {
+    return null;
+  }
 
   const sections: {
     label: string;
@@ -41,9 +44,8 @@ export const Toolbar = () => {
     isActive?: boolean;
   }[][] = [
     [
-      // 后退
       {
-        label: '撤销',
+        label: 'Undo',
         icon: Undo2Icon,
         onClick: () => {
           /**
@@ -55,32 +57,30 @@ export const Toolbar = () => {
           editor?.chain().focus().undo().run();
         },
       },
-      // 前进
       {
-        label: '重做',
+        label: 'Redo',
         icon: Redo2Icon,
         onClick: () => {
           editor?.chain().focus().redo().run();
         },
       },
       {
-        label: '清除格式',
+        label: 'Clear Format',
         icon: EraserIcon,
         onClick: () => {
           // 删除当前选择中的所有标记
           editor?.chain().focus().unsetAllMarks().run();
         },
       },
-      // 打印
       {
-        label: '打印',
+        label: 'Print',
         icon: PrinterIcon,
         onClick: () => {
           window.print();
         },
       },
       {
-        label: '拼写检查',
+        label: 'Spell Check',
         icon: SpellCheckIcon,
         onClick: () => {
           const current = editor?.view.dom.getAttribute('spellcheck') ?? 'false';
@@ -91,7 +91,7 @@ export const Toolbar = () => {
     ],
     [
       {
-        label: '粗体',
+        label: 'Bold',
         icon: BoldIcon,
         isActive: editor?.isActive('bold') ?? false,
         onClick: () => {
@@ -99,7 +99,7 @@ export const Toolbar = () => {
         },
       },
       {
-        label: '斜体',
+        label: 'Italic',
         icon: ItalicIcon,
         isActive: editor?.isActive('italic') ?? false,
         onClick: () => {
@@ -107,7 +107,7 @@ export const Toolbar = () => {
         },
       },
       {
-        label: '下划线',
+        label: 'Underline',
         icon: UnderlineIcon,
         isActive: editor?.isActive('underline') ?? false,
         onClick: () => {
@@ -115,7 +115,7 @@ export const Toolbar = () => {
         },
       },
       {
-        label: '删除线',
+        label: 'Strikethrough',
         icon: StrikethroughIcon,
         isActive: editor?.isActive('strike') ?? false,
         onClick: () => {
@@ -131,7 +131,7 @@ export const Toolbar = () => {
       //   },
       // },
       {
-        label: '代码',
+        label: 'Code',
         icon: CodeIcon,
         isActive: editor?.isActive('code') ?? false,
         onClick: () => {
