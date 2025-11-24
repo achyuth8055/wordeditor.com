@@ -22,7 +22,7 @@ export const DocumentInput = ({ title, id }: DocumentInputProps) => {
   // const document = useStableQuery(api.documents.getById, { id: documentId as Id<'documents'> });
 
   // Mock status - Liveblocks removed
-  const status = 'connected';
+  const status: 'connected' | 'connecting' | 'reconnecting' | 'disconnected' = 'connected';
 
   const [value, setValue] = useState(title);
   // const [isError, setIsError] = useState(false);
