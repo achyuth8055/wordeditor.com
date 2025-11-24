@@ -1,25 +1,15 @@
-import { Id } from '../../../../convex/_generated/dataModel';
-import { Document } from './document';
-import { api } from '../../../../convex/_generated/api';
-import { preloadQuery } from 'convex/nextjs';
-import { redirect } from 'next/navigation';
+import { StandaloneEditor } from './standalone-editor';
 
 interface DocumentIdPageProps {
   params: Promise<{
-    documentId: Id<'documents'>;
+    documentId: string;
   }>;
 }
 
 const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
   const { documentId } = await params;
 
-  try {
-    const preloadedDocument = await preloadQuery(api.documents.getById, { id: documentId });
-
-    return <Document preloadedDocument={preloadedDocument} />;
-  } catch (error) {
-    redirect('/');
-  }
+  return <StandaloneEditor documentId={documentId} />;
 };
 
 export default DocumentIdPage;
