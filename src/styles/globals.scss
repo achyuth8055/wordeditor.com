@@ -1,0 +1,535 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    --h1-margin-top: 26px;
+    --h1-margin-bottom: 10px;
+    --h1-font-size: 28px;
+    --h2-margin-top: 22px;
+    --h2-margin-bottom: 8px;
+    --h2-font-size: 24px;
+    --h3-margin-top: 20px;
+    --h3-margin-bottom: 8px;
+    --h3-font-size: 20px;
+    --h4-margin-top: 18px;
+    --h4-margin-bottom: 8px;
+    --h4-font-size: 18px;
+    --h5-margin-top: 18px;
+    --h5-margin-bottom: 8px;
+    --h5-font-size: 16px;
+    --h6-margin-top: 16px;
+    --h6-margin-bottom: 8px;
+    --h6-font-size: 16px;
+    --common-row-margin-top: 8px;
+    --common-row-margin-bottom: 8px;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.tiptap {
+  font-size: 16px;
+  word-break: break-word;
+  line-height: 1.5;
+  position: relative;
+
+  /*
+  &[spellcheck='true'] {
+    &::spelling-error {
+      text-decoration: wavy red;
+    }
+  }
+  */
+
+  & > :first-child {
+    margin-top: 0 !important;
+  }
+
+  .ProseMirror-selectednode {
+  }
+
+  /* ----------------------------------- List styles ----------------------------------- */
+
+  ul,
+  ol {
+    padding: 0 1rem;
+    // margin: 1.25rem 1rem 1.25rem 0.4rem;
+  }
+
+  ul li {
+    list-style-type: disc;
+
+    // p {
+    //   margin-top: 0.25em;
+    //   margin-bottom: 0.25em;
+    // }
+  }
+
+  ol li {
+    list-style-type: decimal;
+
+    // p {
+    //   margin-top: 0.25em;
+    //   margin-bottom: 0.25em;
+    // }
+  }
+
+  /* ----------------------------------- List styles ----------------------------------- */
+
+  /* ----------------------------------- Task list styles ----------------------------------- */
+
+  ul[data-type='taskList'] {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+
+      > label {
+        flex: 0 0 auto;
+        margin-right: 0.5rem;
+        user-select: none;
+      }
+
+      > div {
+        flex: 1 1 auto;
+      }
+    }
+
+    input[type='checkbox'] {
+      cursor: pointer;
+    }
+
+    ul[data-type='taskList'] {
+      margin: 0;
+    }
+  }
+
+  /* ----------------------------------- Task list styles ----------------------------------- */
+
+  /* ----------------------------------- Heading styles ----------------------------------- */
+
+  // h1,
+  // h2,
+  // h3,
+  // h4,
+  // h5,
+  // h6 {
+  //   line-height: 1.1;
+  //   margin-top: 2.5rem;
+  //   text-wrap: pretty;
+  // }
+
+  // h1,
+  // h2 {
+  //   margin-top: 3.5rem;
+  //   margin-bottom: 1.5rem;
+  // }
+
+  // h1 {
+  //   font-size: 1.4rem;
+  // }
+
+  // h2 {
+  //   font-size: 1.2rem;
+  // }
+
+  // h3 {
+  //   font-size: 1.1rem;
+  // }
+
+  // h4,
+  // h5,
+  // h6 {
+  //   font-size: 1rem;
+  // }
+
+  /* ----------------------------------- Heading styles ----------------------------------- */
+
+  /* ----------------------------------- Placeholder styles https://tiptap.dev/docs/editor/extensions/functionality/placeholder ----------------------------------- */
+
+  p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* ----------------------------------- Placeholder styles https://tiptap.dev/docs/editor/extensions/functionality/placeholder ----------------------------------- */
+
+  /* ----------------------------------- Table styles ----------------------------------- */
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+
+    td,
+    th {
+      border: 1px solid #dee0e3;
+      box-sizing: border-box;
+      min-width: 1em;
+      padding: 6px 8px;
+      position: relative;
+      vertical-align: top;
+
+      > * {
+        margin-bottom: 0;
+      }
+    }
+
+    th {
+      background-color: #f2f3f5;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .selectedCell:after {
+      // background: hsl(var(--primary-foreground));
+      content: '';
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
+    }
+    th.selectedCell,
+    td.selectedCell {
+      background: #ccd9fd;
+    }
+
+    .column-resize-handle {
+      @apply bg-blue-500;
+      bottom: 0px;
+      pointer-events: none;
+      position: absolute;
+      right: -1px;
+      top: 0;
+      width: 2px;
+      z-index: 1;
+    }
+  }
+
+  .tableWrapper {
+    margin-top: 1.5rem;
+    overflow-x: auto;
+  }
+
+  &.resize-cursor {
+    cursor: col-resize;
+  }
+
+  /* ----------------------------------- Table styles ----------------------------------- */
+
+  /* ----------------------------------- Image styles ----------------------------------- */
+
+  // img {
+  //   display: block;
+  //   height: auto;
+  //   margin: 1.5rem 0;
+  //   max-width: 100%;
+
+  //   &.ProseMirror-selectednode {
+  //     outline: 3px solid hsl(var(--primary));
+  //   }
+  // }
+
+  /* ----------------------------------- Image styles ----------------------------------- */
+
+  .paragraph-node {
+    margin-top: var(--common-row-margin-top);
+    margin-bottom: var(--common-row-margin-bottom);
+  }
+
+  .heading-node {
+    font-weight: 700;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h1.heading-node {
+    margin-top: var(--h1-margin-top);
+    margin-bottom: var(--h1-margin-bottom);
+    font-size: var(--h1-font-size);
+  }
+
+  h2.heading-node {
+    margin-top: var(--h2-margin-top);
+    margin-bottom: var(--h2-margin-bottom);
+    font-size: var(--h2-font-size);
+  }
+
+  h3.heading-node {
+    margin-top: var(--h3-margin-top);
+    margin-bottom: var(--h3-margin-bottom);
+    font-size: var(--h3-font-size);
+  }
+
+  h4.heading-node {
+    margin-top: var(--h4-margin-top);
+    margin-bottom: var(--h4-margin-bottom);
+    font-size: var(--h4-font-size);
+  }
+
+  h5.heading-node {
+    margin-top: var(--h5-margin-top);
+    margin-bottom: var(--h5-margin-bottom);
+    font-size: var(--h5-font-size);
+  }
+
+  h6.heading-node {
+    margin-top: var(--h6-margin-top);
+    margin-bottom: var(--h6-margin-bottom);
+    font-size: var(--h6-font-size);
+  }
+
+  ul[data-type='taskList'] {
+    li {
+      > label {
+        flex: 0 0 auto;
+        margin-right: 0.5rem;
+        user-select: none;
+      }
+
+      > div {
+        :first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .highlight-node {
+    background-color: #faf594;
+    border-radius: 4px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .code-node {
+    background-color: rgba(88, 5, 255, 0.05);
+    border-radius: 4px;
+    color: #2e2b29;
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  .link-node {
+    @apply text-blue-500 cursor-pointer;
+
+    &:hover {
+      @apply text-blue-700 underline;
+    }
+  }
+
+  img:not(.ProseMirror-separator) {
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    height: auto;
+    border-radius: 4px;
+    margin-top: var(--common-row-margin-top);
+    margin-bottom: var(--common-row-margin-bottom);
+
+    // Add minimum size constraints
+    min-width: 100px; // Or other desired minimum width
+    min-height: 100px; // Or other desired minimum height
+
+    // Maintain aspect ratio
+    object-fit: contain;
+
+    @apply shadow-md;
+
+    &.ProseMirror-selectednode {
+      @apply outline outline-2 outline-offset-4 outline-blue-500;
+    }
+  }
+
+  .ProseMirror-gapcursor {
+    position: relative;
+    margin: 0;
+    margin-top: 8px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: auto;
+      height: 1.2em;
+      border-top: none;
+      border-left: 1px solid black;
+      /* animation: ProseMirror-cursor-blink 1.1s steps(2, start) infinite; */
+      animation: cursor-blink 1.1s steps(2, start) infinite;
+    }
+  }
+
+  /*
+  @keyframes ProseMirror-cursor-blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  */
+
+  /*  
+  :spelling-error {
+    text-decoration: wavy red;
+  }
+  */
+}
+@keyframes cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
