@@ -46,7 +46,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Fast & Efficient Tools</h3>
               <p className="text-gray-700">
-                Our tools are built with performance in mind. Get instant results with real-time processing, whether you're counting words, analyzing readability, or testing your typing speed.
+                Our tools are built with performance in mind. Get instant results with real-time processing, whether you&apos;re counting words, analyzing readability, or testing your typing speed.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Privacy Focused</h3>
               <p className="text-gray-700">
-                Your text never leaves your browser. All processing happens locally on your device, ensuring your content remains private and secure. We don't store or track your text data.
+                Your text never leaves your browser. All processing happens locally on your device, ensuring your content remains private and secure. We don&apos;t store or track your text data.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function AboutPage() {
         <div className="text-center bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl p-12 text-white">
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-xl mb-6 text-white/90">
-            Have questions, suggestions, or feedback? We'd love to hear from you!
+            Have questions, suggestions, or feedback? We&apos;d love to hear from you!
           </p>
           <Link href="/contact">
             <button className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">

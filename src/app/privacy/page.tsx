@@ -131,13 +131,13 @@ export default function PrivacyPolicyPage() {
                 <li>
                   <strong>Google Analytics:</strong> To analyze website traffic and usage patterns. 
                   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:underline ml-1">
-                    Google's Privacy Policy
+                    Google&apos;s Privacy Policy
                   </a>
                 </li>
                 <li>
                   <strong>Google AdSense:</strong> To display advertisements on our website. 
                   <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:underline ml-1">
-                    Google's Ad Policy
+                    Google&apos;s Ad Policy
                   </a>
                 </li>
                 <li>
@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Data Retention</h2>
               <p className="text-gray-700 mb-4">
-                Since we process text locally in your browser, we do not retain any of your text content. Analytics data is retained according to Google Analytics' standard retention policies. Contact information from inquiries is kept for up to 2 years or until you request deletion.
+                Since we process text locally in your browser, we do not retain any of your text content. Analytics data is retained according to Google Analytics&apos; standard retention policies. Contact information from inquiries is kept for up to 2 years or until you request deletion.
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Children's Privacy */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Children&apos;s Privacy</h2>
               <p className="text-gray-700">
                 Our services are available to users of all ages. We do not knowingly collect personal information from children under 13 without parental consent. If you believe a child has provided us with personal information, please contact us immediately.
               </p>
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to This Policy</h2>
               <p className="text-gray-700">
-                We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy on this page and updating the "Last updated" date. Continued use of our services after changes constitutes acceptance of the updated policy.
+                We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy on this page and updating the &quot;Last updated&quot; date. Continued use of our services after changes constitutes acceptance of the updated policy.
               </p>
             </div>
 
