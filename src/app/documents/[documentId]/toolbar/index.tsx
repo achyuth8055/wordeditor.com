@@ -187,15 +187,7 @@ export const Toolbar = () => {
 
         <Separator orientation="vertical" className="h-5 bg-neutral-300 mx-1.5" />
 
-        {sections[1].map(item => (
-          <ToolbarButton key={item.label} tooltipLabel={item.label} {...item}>
-            <item.icon className="size-4" />
-          </ToolbarButton>
-        ))}
-
-        <Separator orientation="vertical" className="h-5 bg-neutral-300 mx-1.5" />
-
-        {sections[2].map(item => (
+        {sections[1] && sections[1].map(item => (
           <ToolbarButton key={item.label} tooltipLabel={item.label} {...item}>
             <item.icon className="size-4" />
           </ToolbarButton>
