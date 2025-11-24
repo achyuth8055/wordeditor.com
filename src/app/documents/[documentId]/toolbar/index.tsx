@@ -139,22 +139,16 @@ export const Toolbar = () => {
         },
       },
     ],
-    [
-      {
-        label: '评论',
-        icon: MessageSquarePlusIcon,
-        isActive: editor?.isActive('pendingComment') ?? false,
-        onClick: () => editor?.chain().focus().addPendingComment().run(),
-      },
-      // {
-      //   label: '任务列表',
-      //   icon: ListTodoIcon,
-      //   isActive: editor?.isActive('taskList') ?? false,
-      //   onClick: () => {
-      //     editor?.chain().focus().toggleTaskList().run();
-      //   },
-      // },
-    ],
+    // Comment feature requires Liveblocks collaboration (disabled)
+    // [
+    //   {
+    //     label: 'Comment',
+    //     icon: MessageSquarePlusIcon,
+    //     isActive: editor?.isActive('pendingComment') ?? false,
+    //     onClick: () => editor?.chain().focus().addPendingComment().run(),
+    //   },
+    // ],
+  ];
   ];
 
   return (
