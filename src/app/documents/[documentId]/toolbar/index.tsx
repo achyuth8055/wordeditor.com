@@ -149,7 +149,6 @@ export const Toolbar = () => {
     //   },
     // ],
   ];
-  ];
 
   return (
     <div className="ToolbarComponent bg-[#f1f4f9] px-2.5 py-0.5 rounded-3xl flex justify-center items-center gap-x-0.5 overflow-x-auto">
