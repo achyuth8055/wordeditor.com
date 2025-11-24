@@ -1,11 +1,11 @@
 'use client';
 
 import { Navbar } from '../(home)/navbar';
-import TemplatesGallery from '../(home)/templates-gallery';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Document editor requires Convex backend - showing info page
 const DocumentsPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -23,24 +23,28 @@ const DocumentsPage = () => {
             </Link>
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Document Editor</h1>
-              <p className="text-sm text-gray-600 mt-1">Create and edit rich text documents</p>
+              <p className="text-sm text-gray-600 mt-1">Rich text document editor (Coming Soon)</p>
             </div>
           </div>
         </div>
 
-        {/* Templates Section */}
+        {/* Info Section */}
         <div className="py-8">
           <div className="max-w-screen-xl mx-auto px-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-6">Choose a template to get started</h2>
-            <TemplatesGallery />
-          </div>
-        </div>
-
-        {/* Create Blank Document Section */}
-        <div className="max-w-screen-xl mx-auto px-6 pb-12">
-          <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Or start from scratch</h3>
-            <p className="text-gray-600 mb-4">Create a blank document and customize it your way</p>
+            <div className="bg-blue-50 rounded-xl border border-blue-200 p-8 text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Document Editor Coming Soon</h2>
+              <p className="text-gray-700 mb-6">
+                The collaborative document editor with templates and real-time editing requires backend setup (Convex, Clerk, Liveblocks).
+              </p>
+              <p className="text-gray-600">
+                Meanwhile, check out our 9 powerful text tools that work instantly without any setup!
+              </p>
+              <Link href="/">
+                <Button className="mt-6">
+                  Explore Text Tools
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
