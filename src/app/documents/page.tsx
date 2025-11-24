@@ -5,13 +5,28 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
+import { templates } from '@/constants/tempaltes';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 const DocumentsPage = () => {
   const router = useRouter();
+  const [isCreating, setIsCreating] = useState(false);
 
-  const createNewDocument = () => {
+  const createDocument = (title: string, initialContent: string) => {
+    setIsCreating(true);
     // Generate a random ID for the new document
     const randomId = Math.random().toString(36).substring(2, 15);
+    // Save the initial content to localStorage
+    localStorage.setItem(
+      `doc-${randomId}`,
+      JSON.stringify({
+        title,
+        content: initialContent,
+        updatedAt: new Date().toISOString(),
+      })
+    );
     router.push(`/documents/${randomId}`);
   };
 
@@ -36,18 +51,36 @@ const DocumentsPage = () => {
           </div>
         </div>
 
-        {/* Create Document Section */}
-        <div className="py-12">
+        {/* Templates Gallery */}
+        <div className="py-8 bg-gray-50">
           <div className="max-w-screen-xl mx-auto px-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-12 text-center shadow-lg">
-              <h2 className="text-3xl font-semibold text-gray-900 mb-4">Create a New Document</h2>
-              <p className="text-gray-700 mb-8 text-lg">
-                Start editing with our powerful rich text editor. Your work is saved locally in your browser.
-              </p>
-              <Button onClick={createNewDocument} size="lg" className="text-lg px-8 py-6">
-                Create Blank Document
-              </Button>
-            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Choose a template to get started</h2>
+            <Carousel>
+              <CarouselContent>
+                {templates.map((template) => (
+                  <CarouselItem key={template.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                    <div
+                      onClick={() => !isCreating && createDocument(template.label, template.initialContent)}
+                      className={cn(
+                        'aspect-[3/4] flex flex-col gap-y-2.5 cursor-pointer transition hover:scale-105',
+                        isCreating && 'opacity-50 cursor-not-allowed'
+                      )}
+                    >
+                      <div className="bg-white rounded-sm border overflow-hidden flex-1">
+                        <img
+                          src={template.imageUrl}
+                          alt={template.label}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <p className="text-sm font-medium text-center">{template.label}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
