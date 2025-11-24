@@ -1,7 +1,8 @@
 'use client';
 
 import { Navbar } from './navbar';
-import TemplatesGallery from './templates-gallery';
+// Templates Gallery requires Convex backend (commented out for now)
+// import TemplatesGallery from './templates-gallery';
 import Link from 'next/link';
 
 const tools = [
@@ -398,8 +399,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Templates Section */}
-        <div className="bg-gray-50 py-16">
+        {/* Templates Section - Requires Convex backend, commented out for now */}
+        {/* <div className="bg-gray-50 py-16">
           <div className="max-w-screen-xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Document Templates</h2>
             <p className="text-lg text-gray-600 mb-8">
@@ -407,7 +408,7 @@ const Home = () => {
             </p>
             <TemplatesGallery />
           </div>
-        </div>
+        </div> */}
 
         {/* Blog Section */}
         <div className="max-w-screen-xl mx-auto px-6 py-16">
