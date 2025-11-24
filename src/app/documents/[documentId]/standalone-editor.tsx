@@ -20,6 +20,7 @@ import TextAlign from '@tiptap/extension-text-align';
 import { FontSizeExtension } from '@/extensions/font-size';
 import { LineHeightExtension } from '@/extensions/line-height';
 import { useEffect, useState } from 'react';
+import { useEditorStore } from '@/store/use-editor-store';
 import { Navbar } from '../../(home)/navbar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -27,7 +28,7 @@ import { ArrowLeft, Download, Save } from 'lucide-react';
 import Link from 'next/link';
 import { Ruler } from './ruler';
 import { Threads } from './threads';
-import Toolbar from './toolbar';
+import { Toolbar } from './toolbar';
 
 interface StandaloneEditorProps {
   documentId: string;
@@ -37,6 +38,7 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
   const [title, setTitle] = useState('Untitled Document');
   const [content, setContent] = useState('');
   const [isSaving, setIsSaving] = useState(false);
+  const { setEditor } = useEditorStore();
 
   // Load document from localStorage
   useEffect(() => {
@@ -102,6 +104,16 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
     },
   });
 
+  // Set editor in store for Toolbar to use
+  useEffect(() => {
+    if (editor) {
+      setEditor(editor);
+    }
+    return () => {
+      setEditor(null);
+    };
+  }, [editor, setEditor]);
+
   const saveToLocalStorage = (docTitle: string, docContent: string) => {
     localStorage.setItem(
       `doc-${documentId}`,
@@ -162,7 +174,7 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
             </Button>
           </div>
         </div>
-        {editor && <Toolbar editor={editor} />}
+        {editor && <Toolbar />}
       </div>
 
       <div className="pt-[140px] print:pt-0">
