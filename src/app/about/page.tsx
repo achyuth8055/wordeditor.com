@@ -29,10 +29,10 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
           </div>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            At Word Editor Tools, our mission is to provide accessible, high-quality text editing and analysis tools to everyone, completely free of charge. We believe that powerful writing tools shouldn't be locked behind paywalls or complicated software installations.
+            At Word Editor Tools, our mission is to provide accessible, high-quality text editing and analysis tools to everyone, completely free of charge. We believe that powerful writing tools shouldn&apos;t be locked behind paywalls or complicated software installations.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Whether you're a student working on an essay, a professional crafting important documents, or a content creator optimizing your writing, our suite of tools is designed to make your work easier, faster, and more effective.
+            Whether you&apos;re a student working on an essay, a professional crafting important documents, or a content creator optimizing your writing, our suite of tools is designed to make your work easier, faster, and more effective.
           </p>
         </div>
 

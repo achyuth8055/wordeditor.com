@@ -356,7 +356,7 @@ const Home = () => {
             Perfect For Everyone
           </h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            Whether you're a student, professional, or content creator, our tools help you work smarter and faster
+            Whether you&apos;re a student, professional, or content creator, our tools help you work smarter and faster
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-white rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
