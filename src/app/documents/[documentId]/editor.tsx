@@ -89,7 +89,7 @@ export const Editor = ({ initialContent }: EditorProps) => {
     content: initialContent || '',
     extensions: [
       StarterKit.configure({
-        history: true, // Enable history since we removed Liveblocks
+        history: {}, // Enable history with default options
         paragraph: {
           HTMLAttributes: { class: 'paragraph-node', 'data-type': 'paragraph' },
         },
