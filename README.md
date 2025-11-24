@@ -1,78 +1,42 @@
-# Collaborative Document Editor
+# Word Editor Tools
 
-English
+Professional online text editing and analysis tools for writers, students, and content creators. All tools process text locally in your browser for maximum privacy.
 
-A real-time collaborative document editing platform built with Next.js, Convex, and Tiptap. Features include real-time collaboration, rich text editing, and document templates.
+## 🚀 Features
 
-## Key Features
+### Text Tools
+- **Word Counter** - Count words, characters, sentences, and paragraphs with reading time estimates
+- **Character Counter** - Detailed character analysis including letters, numbers, and special characters
+- **Typing Test** - Measure and improve your typing speed and accuracy
+- **Reading Time Calculator** - Estimate how long it takes to read your content
+- **Text Analyzer** - Get readability scores, keyword density, and comprehensive analysis
+- **Case Converter** - Transform text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more
+- **Text Diff Checker** - Compare two texts and see highlighted differences
+- **Placeholder Text Generator** - Generate English placeholder text for designs
+- **Markdown Preview** - Write and preview Markdown in real-time
 
-- 🚀 Built on Next.js 15 App Router architecture
-- 💾 Real-time data synchronization with Convex
-- 🔐 Complete authentication with Clerk
-- ⚡️ Real-time collaboration for seamless multi-user editing
-- 📱 Responsive design for multi-device access
-- 🎨 Modern UI design
-- 🛠 Comprehensive development toolchain support
+### Document Editor
+- Rich text editing with formatting
+- Real-time collaboration
+- Document saving and management
 
-## Preview
+## 🛠️ Tech Stack
 
-![Login and Dashboard](/docs/preview/preview1.png)
-*Login interface and project dashboard - Secure authentication and document management*
+- **Framework**: Next.js 15.0.3 with Turbopack
+- **UI Library**: React with Radix UI components
+- **Styling**: Tailwind CSS with custom SCSS
+- **Icons**: Lucide React
+- **Backend**: Convex for document storage
+- **Authentication**: Clerk
+- **Real-time**: Liveblocks for collaboration
+- **Analytics**: Google Analytics 4
 
-![Organization Management](/docs/preview/preview2.png)
-*Organization creation and management - Team collaboration made easy*
-
-![Rich Text Editor](/docs/preview/preview3.png)
-*Feature-rich text editor - Comprehensive formatting and editing tools*
-
-![Real-time Collaboration](/docs/preview/preview4.png)
-*Real-time collaboration - Live editing, presence awareness, and inline commenting*
-
-## Feature Set
-
-- 🔄 Real-time collaborative editing
-- 📝 Rich text editing capabilities
-- 👥 Organization-level permission management
-- 📋 Document template system
-- 💬 Inline commenting functionality
-- 🎨 Rich formatting options
-- 📱 Responsive design
-- 🔍 Document search functionality
-- 📂 Folder organization
-- 🔒 Secure access control
-
-## Tech Stack
-
-### Frontend
-
-- **Framework:** [Next.js 14](https://nextjs.org/docs) (App Router)
-- **Editor:** [Tiptap](https://tiptap.dev/docs/editor/introduction)
-- **State Management:** [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/docs)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.com/docs)
-- **Icons:** [Lucide Icons](https://lucide.dev/docs)
-
-### Backend
-
-- **Database:** [Convex](https://docs.convex.dev/home)
-- **Authentication:** [Clerk](https://clerk.com/docs)
-- **Real-time Collaboration:** [Liveblocks](https://liveblocks.io/docs)
-- **File Storage:** [Convex Storage](https://docs.convex.dev/file-storage)
-
-## Development Requirements
-
-- Node.js 18.0.0 or higher
-- pnpm 9.0.0 or higher
-- Git
-
-## Getting Started
+## 📦 Installation
 
 ```bash
-# Clone repository
-git clone https://github.com/core-admin/docs-tutorial.git
-
-# Navigate to project directory
-cd docs-tutorial
+# Clone the repository
+git clone https://github.com/achyuth8055/wordeditor.com.git
+cd wordeditor.com
 
 # Install dependencies
 pnpm install
@@ -80,158 +44,52 @@ pnpm install
 # Set up environment variables
 cp .env.example .env.local
 
-# Start development server
+# Run the development server
 pnpm dev
 ```
 
-## Project Structure
+## 🌐 Environment Variables
 
-```
-src/
-├── app/                 # Next.js application routes and pages
-├── components/         # Reusable components
-│   ├── ui/            # shadcn/ui components
-│   └── custom/        # Custom business components
-├── hooks/             # Custom React hooks
-├── extensions/        # Tiptap editor extensions
-├── lib/              # Utility functions
-├── constants/        # Constants and configurations
-├── store/            # Global state management
-└── styles/           # Global styles
-```
+Create a `.env.local` file with the required variables for Convex, Clerk, and Liveblocks.
 
-## Environment Variables
+## 🚀 Deployment
 
-```bash
-# Clerk Authentication
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=  # Clerk public key
-CLERK_SECRET_KEY=                   # Clerk secret key
+### Vercel (Recommended)
 
-# Convex
-NEXT_PUBLIC_CONVEX_URL=            # Convex deployment URL
-CONVEX_DEPLOYMENT=                 # Convex deployment ID
-CONVEX_DEPLOY_KEY=                # Convex deploy key (only needed for deployment)
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Add environment variables
+4. Deploy!
 
-# Liveblocks
-NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY= # Liveblocks public key
-LIVEBLOCKS_SECRET_KEY=            # Liveblocks secret key (only needed for deployment)
-```
+## 📝 Google AdSense Ready
 
-## Core Functionality
+This project is configured for Google AdSense:
+- Google Analytics integrated
+- All required pages created (About, Privacy, Terms, Contact)
+- Sitemap and robots.txt configured
+- Original, valuable content
 
-### Real-time Collaboration
+## 🔒 Privacy & Security
 
-- Real-time collaboration system based on Liveblocks
-- Support for simultaneous multi-user editing
-- Real-time cursor and selection display
-- User online status synchronization
-- Automatic conflict resolution
+- All text processing happens locally in the browser
+- No text content is stored on servers
+- User privacy is protected by design
 
-### Document Editing
+## 📄 Pages
 
-- Rich text editor based on Tiptap
-- Multiple text formatting options
-- Support for complex elements like images and tables
-- Keyboard shortcut support
-- Markdown syntax support
+- Home, About, Contact, Privacy Policy, Terms & Conditions
+- 9 Text Tools + Document Editor
+- Blog with SEO-optimized articles
 
-### Document Management
+## 📧 Contact
 
-- Folder structure organization
-- Document search functionality
-- Document template system
-- Document version history
-- Document import/export
+- Website: https://wordeditor.online
+- GitHub: https://github.com/achyuth8055/wordeditor.com
 
-### Access Control
+## 📜 License
 
-- Organization-based access control
-- Document-level permission settings
-- Public sharing support
-- Access tracking
-
-## Development Guide
-
-### Local Development
-
-```bash
-# Start development server
-pnpm dev
-
-# Start database
-pnpm convex:dev
-```
-
-### Code Checking
-
-```bash
-# Run ESLint
-pnpm lint
-```
-
-### Build and Deploy
-
-```bash
-# Build project
-pnpm build
-
-# Preview build locally
-pnpm start
-```
-
-## Deployment
-
-1. Ensure all environment variables are properly configured
-2. Build the project
-3. Deploy to a Node.js-compatible platform (Vercel recommended)
-
-For detailed deployment instructions, refer to the [Deployment Documentation](docs/deployment.md)
-
-## Performance Optimization
-
-- Automatic image optimization
-- Route preloading
-- Component lazy loading
-- Static asset caching
-- API response caching
-
-## Contributing Guidelines
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-For more details, please refer to the [Contributing Guidelines](CONTRIBUTING.md)
-
-## Feedback
-
-If you discover any issues or have suggestions for improvements:
-
-1. Check the [FAQ](FAQ.md)
-2. Search existing [Issues](https://github.com/core-admin/docs-tutorial/issues)
-3. Create a new Issue or contact maintainers directly
-
-## License
-
-This project is open-sourced under the MIT License - see [LICENSE](LICENSE) for details
-
-## Maintainers
-
-- [@core-admin](https://github.com/core-admin)
-
-## Acknowledgments
-
-Thanks to the following projects:
-
-- [Next.js](https://nextjs.org)
-- [Tiptap](https://tiptap.dev)
-- [Convex](https://convex.dev)
-- [Clerk](https://clerk.com)
-- [Liveblocks](https://liveblocks.io)
-- [shadcn/ui](https://ui.shadcn.com)
+All rights reserved © 2024 Word Editor Tools
 
 ---
 
-If you find this project helpful, please consider giving it a star ⭐️
+Built with ❤️ for writers and content creators
