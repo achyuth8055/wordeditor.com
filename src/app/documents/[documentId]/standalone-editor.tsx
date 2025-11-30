@@ -13,10 +13,11 @@ import ImageResize from 'tiptap-extension-resize-image';
 import Underline from '@tiptap/extension-underline';
 import FontFamily from '@tiptap/extension-font-family';
 import TextStyle from '@tiptap/extension-text-style';
-import Color from '@tiptap/extension-color';
+import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import LinkExtension from '@tiptap/extension-link';
 import TextAlign from '@tiptap/extension-text-align';
+import Placeholder from '@tiptap/extension-placeholder';
 import { FontSizeExtension } from '@/extensions/font-size';
 import { LineHeightExtension } from '@/extensions/line-height';
 import { useEffect, useState } from 'react';
@@ -25,7 +26,7 @@ import { Navbar } from '../../(home)/navbar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowLeft, Download, Save } from 'lucide-react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { Ruler } from './ruler';
 import { Threads } from './threads';
 import { Toolbar } from './toolbar';
@@ -51,9 +52,9 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
   }, [documentId]);
 
   const editor = useEditor({
+    autofocus: 'end',
     editable: true,
     immediatelyRender: false,
-    shouldRerenderOnTransaction: false,
     editorProps: {
       attributes: {
         style: 'padding-left: 56px; padding-right: 56px;',
@@ -64,6 +65,9 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
     extensions: [
       StarterKit.configure({
         history: {}, // Enable history with default options
+      }),
+      Placeholder.configure({
+        placeholder: 'Start typing your document...',
       }),
       FontSizeExtension,
       LineHeightExtension,
@@ -152,11 +156,11 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
         <Navbar />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="/documents">
+            <NextLink href="/documents">
               <Button variant="ghost" size="icon">
                 <ArrowLeft className="size-5" />
               </Button>
-            </Link>
+            </NextLink>
             <Input
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
