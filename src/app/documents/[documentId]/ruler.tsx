@@ -102,7 +102,7 @@ export const Ruler = () => {
 
   return (
     <div
-      className="h-6 border-b mx-auto border-gray-300 flex items-end select-none print:hidden sticky top-0 z-10 bg-[#f9fbfd]"
+      className="h-6 border-b mx-auto border-gray-300 dark:border-gray-600 flex items-end select-none print:hidden sticky top-0 z-10 bg-white dark:bg-gray-800"
       style={{ width: EDITOR_WIDTH }}
       ref={rulerRef}
       // onMouseMove={handleMouseMove}

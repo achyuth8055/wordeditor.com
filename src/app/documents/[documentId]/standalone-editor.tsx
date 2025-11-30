@@ -151,8 +151,8 @@ export function StandaloneEditor({ documentId }: StandaloneEditorProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFBFD]">
-      <div className="flex flex-col px-4 pt-2 gap-y-2 fixed top-0 left-0 right-0 z-10 bg-[#FAFBFD] print:hidden">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <div className="flex flex-col px-4 pt-2 gap-y-2 fixed top-0 left-0 right-0 z-10 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 print:hidden shadow-sm">
         <Navbar />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
