@@ -29,6 +29,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { ListButton } from './list-button';
 import { FontSzeButton } from './font-size-button';
 import { LineHeightButton } from './line-height-button';
+import { AiButton } from './ai-button';
 
 export const Toolbar = () => {
   const { editor } = useEditorStore();
@@ -192,6 +193,10 @@ export const Toolbar = () => {
             <item.icon className="size-4" />
           </ToolbarButton>
         ))}
+
+        <Separator orientation="vertical" className="h-5 bg-neutral-300 mx-1.5" />
+
+        <AiButton />
       </TooltipProvider>
     </div>
   );

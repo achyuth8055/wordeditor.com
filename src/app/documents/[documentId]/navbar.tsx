@@ -40,6 +40,9 @@ import { useEditorStore } from '@/store/use-editor-store';
 import { memo, useState, useReducer } from 'react';
 import { Avatars } from './avatars';
 import { Inbox } from './inbox';
+import { ShareDialog } from './share-dialog';
+import { VersionHistory } from './version-history';
+import { AutosaveStatus } from './autosave-status';
 import { Doc } from '../../../../convex/_generated/dataModel';
 import { useMutation } from 'convex/react';
 import { api } from '../../../../convex/_generated/api';
@@ -52,6 +55,9 @@ import { Button } from '@/components/ui/button';
 
 const RightUserAction = () => (
   <div className="RightUserActionComponent flex gap-3 items-center">
+    <AutosaveStatus />
+    <VersionHistory />
+    <ShareDialog />
     <Avatars />
     <Inbox />
     <Button variant="ghost" size="icon" className="rounded-full">

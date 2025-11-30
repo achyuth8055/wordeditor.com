@@ -13,6 +13,12 @@ import { CaseConverter } from './tools/case-converter';
 import { TextDiff } from './tools/text-diff';
 import { LoremIpsumGenerator } from './tools/lorem-ipsum';
 import { MarkdownPreview } from './tools/markdown-preview';
+import { GrammarChecker } from './tools/grammar-checker';
+import { Paraphraser } from './tools/paraphraser';
+import { Summarizer } from './tools/summarizer';
+import { TextToHtml } from './tools/text-to-html';
+import { HtmlToDocument } from './tools/html-to-document';
+import MarkdownGenerator from './tools/markdown-generator';
 import { Navbar } from '@/app/(home)/navbar';
 
 const toolComponents: Record<string, { component: React.ComponentType; name: string }> = {
@@ -25,6 +31,12 @@ const toolComponents: Record<string, { component: React.ComponentType; name: str
   'text-diff': { component: TextDiff, name: 'Text Difference Checker' },
   'lorem-ipsum': { component: LoremIpsumGenerator, name: 'Lorem Ipsum Generator' },
   'markdown-preview': { component: MarkdownPreview, name: 'Markdown Preview' },
+  'markdown-generator': { component: MarkdownGenerator, name: 'Markdown Generator' },
+  'grammar-checker': { component: GrammarChecker, name: 'Grammar & Style Checker' },
+  'paraphraser': { component: Paraphraser, name: 'AI Paraphraser' },
+  'summarizer': { component: Summarizer, name: 'Text Summarizer' },
+  'text-to-html': { component: TextToHtml, name: 'Text to HTML Converter' },
+  'html-to-document': { component: HtmlToDocument, name: 'HTML to Word/PDF' },
 };
 
 export default function ToolPage() {

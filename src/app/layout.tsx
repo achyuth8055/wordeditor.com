@@ -3,6 +3,9 @@ import localFont from 'next/font/local';
 import '@/styles';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { ConvexClientProvider } from '@/components/convex-client-provider';
+import { ThemeProvider } from '@/components/theme-provider';
+import { KeyboardShortcuts } from '@/components/keyboard-shortcuts';
+import { SkipToContent } from '@/components/accessibility';
 import { Toaster } from 'sonner';
 
 const geistSans = localFont({
@@ -27,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJKE8GN1N9"></script>
@@ -44,10 +47,21 @@ export default function RootLayout({
       </head>
       {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NuqsAdapter>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
-        </NuqsAdapter>
-        <Toaster richColors />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SkipToContent />
+          <NuqsAdapter>
+            <ConvexClientProvider>
+              <main id="main-content">{children}</main>
+            </ConvexClientProvider>
+          </NuqsAdapter>
+          <KeyboardShortcuts />
+          <Toaster richColors />
+        </ThemeProvider>
       </body>
     </html>
   );
